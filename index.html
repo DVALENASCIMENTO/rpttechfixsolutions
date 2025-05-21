@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Relatório Técnico 23/04/2025</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main>
+    <h1>RELATÓRIO DE PROCESSO TÉCNICO</h1>
+
+    <section>
+      <h2>Dados Iniciais</h2>
+      <label>Cliente: <input type="text" value="Onix Suporte e Tecnologia / Positivo Tecnologia S.A."></label>
+      <label>Serviço: <input type="text" value="Criação de Pendrive Bootável com Windows 11"></label>
+      <label>Data: <input type="date" value="2025-04-23"></label>
+      <label>Técnico Responsável: <input type="text" value="Diego Vale do Nascimento"></label>
+    </section>
+
+    <section>
+      <h2>1. OBJETIVO</h2>
+      <textarea>Descrever o processo de criação de um pendrive bootável com o sistema operacional Windows 11 v12.23H2, incluindo o download da ISO, verificação de integridade e gravação com a ferramenta adequada, para futura instalação em equipamento do Banco Santander.</textarea>
+    </section>
+
+    <section>
+      <h2>2. DETALHES DO PROCESSO</h2>
+
+      <h3>2.1 Informações do Cliente</h3>
+      <label>Local de Execução: <input type="text" value="Banco Santander – Agência 2547"></label>
+      <label>Endereço: <input type="text" value="Av. Tancredo Neves, 22, Bairro Pq 10 de Novembro"></label>
+      <label>Unirog: <input type="text" value="0012547"></label>
+      <label>Contato Onix (Renan): <input type="tel" value="(81) 9659-4915"></label>
+      <label>Contato Onix (Vivian): <input type="tel" value="(11) 98665-3362"></label>
+      <label>Suporte Remoto (Gustavo Henrique): <input type="tel" value="+55 (13) 99750-2015"></label>
+
+      <h3>2.2 Hardware Utilizado</h3>
+      <label>Pendrive: <input type="text" value="64 GB"></label>
+      <label>Equipamento de Destino: <input type="text" value="Notebook Lenovo"></label>
+      <label>Patrimônio: <input type="text" value="2437984"></label>
+      <label>MAC Address: <input type="text" value="64:1C:67:ED:35:8C"></label>
+      <label>Hostname: <input type="text" value="N2437984"></label>
+      <label>Nº Chamado: <input type="text" value="RITM015562803"></label>
+
+      <h3>2.3 Sistema Operacional</h3>
+      <textarea>Windows 11 v12.23H2 — ISO de instalação limpa via GPT, modo UEFI, formato NTFS.</textarea>
+
+      <h3>2.4 Software Utilizado</h3>
+      <textarea>Free Download Manager, Rufus 4.7.2231, CertUtil (SHA1)</textarea>
+
+      <h3>2.5 Ambiente de Trabalho</h3>
+      <textarea>Conexão cabeada com ~750 KB/s, ambiente técnico de suporte.</textarea>
+
+      <h3>2.6 Etapas Realizadas</h3>
+      <textarea>
+1. Download da ISO:
+- Nome: Windows_11_v12.23H2_Media.iso
+- Tamanho: 32,6 GB
+- Início: 23/04/2025 às 11:09
+- Fim: ~13:00
+- Velocidade média: 752 KB/s
+
+2. Verificação de Integridade:
+- SHA1 Esperado: 274EFB18DC48CFFE9881F936EDFA3CEF5608E36A
+- SHA1 Obtido: 274EFB18DC48CFFE9881F936EDFA3CEF5608E36A
+- Status: OK
+
+3. Criação do Pendrive:
+- Ferramenta: Rufus
+- Partição: GPT
+- Modo: UEFI
+- Sistema de Arquivos: NTFS
+- Status: Concluído em ~3h46min
+      </textarea>
+
+      <h4>Imagens das Etapas</h4>
+
+      <div class="imagem-etapa">
+        <label>📥 Download da Imagem:
+          <input type="file" accept="image/*" id="imgDownload">
+        </label>
+        <div id="previewDownload"></div>
+      </div>
+
+      <div class="imagem-etapa">
+        <label>🔍 Verificação da Integridade:
+          <input type="file" accept="image/*" id="imgVerificacao">
+        </label>
+        <div id="previewVerificacao"></div>
+      </div>
+
+      <div class="imagem-etapa">
+        <label>💾 Criação do Pendrive Bootável:
+          <input type="file" accept="image/*" id="imgPendrive">
+        </label>
+        <div id="previewPendrive"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. RESULTADO</h2>
+      <textarea>
+Status: Concluído com sucesso
+Tempo total do processo: Aproximadamente 4h
+Observações:
+- Verificação SHA1 validada
+- Pendrive criado com sucesso
+- Equipamento preparado com suporte remoto (Gustavo Henrique)
+      </textarea>
+    </section>
+
+    <section>
+      <h2>4. CONCLUSÃO</h2>
+      <textarea>
+A imagem ISO foi baixada, verificada e transferida para o pendrive com sucesso. O equipamento Lenovo de patrimônio 2437984 encontra-se pronto para receber a instalação conforme especificações da Onix Suporte e Positivo Tecnologia, com execução de Diego Vale e suporte remoto do CERB.
+      </textarea>
+    </section>
+
+    <section>
+      <h2>5. ASSINATURA</h2>
+      <label>Nome: <input type="text" value="Diego Vale do Nascimento"></label>
+      <label>CPF: <input type="text" value="813.655.192-87"></label>
+      <label>Data: <input type="date" value="2025-04-23"></label>
+      <label>Representante Onix/Positivo: <input type="text" placeholder="Nome do responsável"></label>
+      <label>Data Assinatura: <input type="date"></label>
+      <label>Assinatura Cliente (imagem): <input type="file" id="assinaturaUpload" accept="image/*"></label>
+      <div id="assinaturaPreview"></div>
+    </section>
+
+    <button onclick="salvar()">Salvar Relatório</button>
+    <button type="button" onclick="exportarPDF()">Exportar para PDF</button>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
