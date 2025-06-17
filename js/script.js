@@ -27,21 +27,43 @@ previewImagem('assinaturaUpload', 'assinaturaPreview');
 
 function exportarPDF() {
   const main = document.querySelector('main');
+  
+  // Clona o conteúdo do main
+  const clone = main.cloneNode(true);
+
+  // Substitui todos os <textarea> por <pre> com o conteúdo formatado
+  clone.querySelectorAll('textarea').forEach(textarea => {
+    const pre = document.createElement('pre');
+    pre.style.whiteSpace = 'pre-wrap';
+    pre.style.border = '1px solid #ccc';
+    pre.style.padding = '4px';
+    pre.style.minHeight = textarea.offsetHeight + 'px';
+    pre.style.width = textarea.offsetWidth + 'px';
+    pre.textContent = textarea.value;
+    textarea.parentNode.replaceChild(pre, textarea);
+  });
+
+  // Cria um contêiner invisível para renderizar
+  const hiddenContainer = document.createElement('div');
+  hiddenContainer.style.position = 'fixed';
+  hiddenContainer.style.left = '-9999px';
+  hiddenContainer.appendChild(clone);
+  document.body.appendChild(hiddenContainer);
 
   import('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js').then(() => {
     import('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js').then(() => {
       const { jsPDF } = window.jspdf;
 
-      html2canvas(main, {
-        scale: 2, // melhora a resolução
+      html2canvas(clone, {
+        scale: 2,
         useCORS: true,
-        scrollY: -window.scrollY // corrige posição da rolagem
+        scrollY: -window.scrollY
       }).then(canvas => {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF('p', 'mm', 'a4');
 
-        const pageWidth = 210; // A4
-        const pageHeight = 297; // A4
+        const pageWidth = 210;
+        const pageHeight = 297;
         const imgWidth = pageWidth;
         const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
@@ -58,6 +80,9 @@ function exportarPDF() {
         }
 
         pdf.save('relatorio_tecnico.pdf');
+
+        // Limpa o clone oculto após salvar
+        document.body.removeChild(hiddenContainer);
       });
     });
   });
